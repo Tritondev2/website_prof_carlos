@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Paleta principal: azul institucional, cinza claro, texto escuro */
+:root {
+  /* Fontes seguras para web e acadêmico */
+  font-family: 'Inter', 'Segoe UI', Arial, Helvetica, sans-serif;
+  /* Tailwind já cuida do line-height/font-weight na maioria dos casos */
+}
+
+body {
+  /* Fundo global igual ao das páginas */
+  background: linear-gradient(180deg, #EFF6FF 0%, #FFFFFF 100%);
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  /* Remover display flex/center, para não bagunçar layout com Tailwind */
+}
+
+/* Links institucionais */
+a {
+  @apply text-blue-800 font-medium underline-offset-2 transition-colors duration-200;
+  text-decoration: none; /* Mantém padrão, pois hover já destaca */
+}
+a:hover {
+  @apply text-blue-900 underline;
+}
+
+/* Títulos - ajuste elegante */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', 'Segoe UI', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 2.5rem; /* ~text-4xl */
+  line-height: 1.2;
+}
+h2 {
+  font-size: 2rem; /* ~text-3xl */
+}
+h3 {
+  font-size: 1.5rem; /* ~text-2xl */
+}
+
+/* Botão padrão para futuras features */
+button {
+  @apply rounded-lg px-4 py-2 bg-blue-800 text-white font-semibold transition-colors duration-200;
+  border: none;
+  cursor: pointer;
+}
+button:hover,
+button:focus {
+  @apply bg-blue-900;
+  outline: none;
+}
+
+/* Remover dark mode forçado */
+[color-scheme] {
+  color-scheme: unset;
+}
